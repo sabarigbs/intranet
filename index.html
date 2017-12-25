@@ -23,6 +23,13 @@
 
     
     <style>
+
+    	section {
+		  width: 100%;
+		  height: 100%;
+		  padding-top:80px;
+		}
+
         
         .flex-center {
             color: #fff;
@@ -171,12 +178,15 @@
         </div>
         
 
-        <div class="divider-new pt-5">
-            <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s">Password Manager</h2>
-        </div>
+        
 
         <!--Section: Password Manager-->
         <section id="password" class="text-center wow fadeIn"  data-wow-delay="0.2s">
+
+        	<div class="divider-new pt-5">
+            	<h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s">Password Manager</h2>
+        	</div>
+
 
             <p>Password Manager gives end users the ability to securely manage their passwords and resolve account lockout incidents in a self-service fashion without involvement of help desk personnel. This allows organizations to implement strong password policies in Active Directory environments to meet regulatory compliance requirements and address identity management challenges.</p>
             <p>Password management is the most common IT support issue, accounting for most of the help desk workload in many organizations. Password complexity and expiration policy requirements lead to frequently forgotten passwords and account lockouts, increasing the overall administrative burden.</p>
@@ -254,71 +264,72 @@
         </section>
         
 
-        <div class="divider-new pt-5">
-            <h2 class="h2-responsive wow fadeIn">WiFi</h2>
-        </div>
+        
 
         
         <section id="wifi">
 
-            
+        <div class="divider-new pt-5">
+            <h2 class="h2-responsive wow fadeIn">WiFi</h2>
+        </div>
 
         </section>
         
-        <div class="divider-new">
-            <h2 class="h2-responsive wow fadeIn">ERP</h2>
-        </div>
-
+        
 
         <section id="erp">
 
+        	<div class="divider-new">
+            	<h2 class="h2-responsive wow fadeIn">ERP</h2>
+        	</div>
+
             
 
         </section>
         
-        <div class="divider-new">
-            <h2 class="h2-responsive wow fadeIn">Intranet</h2>
-        </div>
+        
 
 
 
         <section id="intranet">
 
-            
+            <div class="divider-new">
+            	<h2 class="h2-responsive wow fadeIn">Intranet</h2>
+        	</div>
 
         </section>
         
-        <div class="divider-new">
-            <h2 class="h2-responsive wow fadeIn">Web OPAC</h2>
-        </div>
+        
 
 
 
         <section id="web_opac">
 
-            
+            <div class="divider-new">
+            	<h2 class="h2-responsive wow fadeIn">Web OPAC</h2>
+        	</div>
 
         </section>
         
-        <div class="divider-new">
-            <h2 class="h2-responsive wow fadeIn">Moodle</h2>
-        </div>
+        
 
 
 
         <section id="moodle">
 
-            
+            <div class="divider-new">
+            	<h2 class="h2-responsive wow fadeIn">Moodle</h2>
+        	</div>
 
         </section>
         
-        <div class="divider-new">
-            <h2 class="h2-responsive wow fadeIn">nptel</h2>
-        </div>
+        
 
         <section id="nptel">
 
-            
+            <div class="divider-new">
+            	<h2 class="h2-responsive wow fadeIn">nptel</h2>
+        	</div>
 
         </section>
 
@@ -327,7 +338,9 @@
             <div class="row">
                 <!--First column-->
                 <div class="col-md-8 mb-5">
-                    <div id="map-container" class="z-depth-1 wow fadeIn" style="height: 300px"></div>
+                    <div id="map-container" class="z-depth-1 wow fadeIn" style="height: 300px">
+                    	
+                    </div>
                 </div>
                 <!--/First column-->
 
@@ -377,6 +390,43 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    	
+    	   $('a[href*="#"]')// Remove links that don't actually link to anything
+		  .not('[href="#"]')
+		  .not('[href="#0"]')
+		  .click(function(event) { // On-page links
+		    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&location.hostname == this.hostname) {
+		      // Figure out element to scroll to
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		      // Does a scroll target exist?
+		      if (target.length) {
+		        // Only prevent default if animation is actually gonna happen
+		        event.preventDefault();
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000, function() {
+		          // Callback after animation
+		          // Must change focus!
+		          var $target = $(target);
+		          $target.focus();
+		          if ($target.is(":focus")) { // Checking if the target was focused
+		            return false;
+		          } else {
+		            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+		            $target.focus(); // Set focus again
+		          };
+		        });
+		      }
+		    }
+		  });
+
+
+    </script>
+
+
     <!-- Bootstrap dropdown -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 
